@@ -4,12 +4,12 @@ MASTER LAYOUT
 body  {
   font-family: 'Montserrat', sans-serif;
   margin: 0 auto;
-  background-color: #0e0e0f;
+  background-color: #1c1c22;
 }
 
 main {
-  padding: 2% 5%;
-  margin: 2% auto;
+  padding: ;
+  margin: ;
 
 }
 
@@ -25,15 +25,18 @@ html {
   --color-white: #D5D5D5;
   --color-black: #1C1C22;
   --color-black-drk: #0E0E0F;
-  --color-prpl: #160323;
-  --color-prpl-lght: #7C42B9;
-  --color-red: #AD3121;
-  --color-red-drk: ;
+  --color-purple: #160323;
+  --color-purple-lght: #7C42B9;
+  --color-red: #CE3B27;
+  --color-red-drk: #AD3121;
   --color-nav-white: #E4E4E4;
 
   --font-primary: 'Montserrat', sans-serif;
 }
 
+.bg-prpl {
+  background-color: var(--color-purple);
+}
 /************************************
 typography
 ************************************/
@@ -52,75 +55,83 @@ h1, h3 {
 
 h1 {
   font-family: 'mostra-nuova', sans-serif;
+  font-size: 48px;
   font-weight: 400;
-  font-size: 120px;
   font-style: normal;
   letter-spacing: 16.8px;
 }
 
 h2 {
-  font-size: 70px;
+  font-size: 30px;
   font-weight: 200;
-  letter-spacing: 7.7px;
+  letter-spacing: 2.4px;
 }
 
 h3 {
-  font-size: 42px;
+  font-size: 26px;
   font-weight: 500;
-  letter-spacing: 5px;
+  letter-spacing: 3.12px;
+  line-height: 1.6;
 }
 
 h4 {
-  font-size: 32px;
+  font-style: 22px;
   font-weight: 700;
   letter-spacing: 0px;
 }
 h5 {
-  font-size: 30px;
   font-weight: 700;
   letter-spacing: 1.2px;
 }
+
+/* heading media queries */
 @media screen and (min-width: 950px) { 
   h1 {
-    font-size: ;
+    font-size: 120px;
     line-height: ;
   }
 
   h2 {
-    font-size: ;
-    line-height: ;
+    font-size: 70px;
+    letter-spacing: 7.7px;
   }
 
   h3 {
-    font-size: ;
-    line-height: ;
+    font-size: 42px;
+    letter-spacing: 5px;
+    font-weight: 500;
   }
 
   h4 {
-    font-size: ;
-    line-height: ;
+    font-size: 32px;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  h5 {
+    font-size: 30px;
   }
 }
-
 
 /*paragraphs */
 p {
   font-size: 15px;
   color: var(--color-white);
   font-weight: 400;
-  letter-spacing: 1.5px;
-  line-height: 2;
+  letter-spacing: 1.125px;
+  line-height: 1.6;
   max-width: 950px;
 }
 
 @media screen and (min-width: 950px) {
   p {
-    font-size: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 2.6rem 0; /*2.6rem ~= 42px from prototype */
   }
 }
 
 a {
-  color: ;
+  color: var(--color-red);
   font-size: ;
   font-weight: ;
   letter-spacing: ;
@@ -130,9 +141,26 @@ a {
 a:hover, button:hover {
   cursor: pointer;
 }
-
+.disch-quote {
+  border-left: 7px solid white;
+  max-width: 850px;
+  margin: 72px 0;
+}
+blockquote {
+  font-size: 30px;
+  letter-spacing: 2.3px;
+  font-weight: 600;
+  line-height: 45px;
+  margin: 0;
+  padding-left: 1.5rem;
+}
+blockquote span {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 20px;
+}
 /**************************************
-Buttons
+Buttons and LINKS
 *****************************************/
 button {
   background-color: ;
@@ -145,7 +173,6 @@ button {
   font-weight: ;
   letter-spacing: ;
   margin: ;
-  padding: 20px 30px;
   text-transform: ;
 }
 
@@ -159,56 +186,70 @@ button:active {
   font-style: ;
 }
 
-/* play game */
-.primary-btn {
-  background-color: var(--color-black);
-  border-radius: ;
-  border: solid 1px var(--color-red);
-  color: var(--color-nav-white);
-  font-size: 24px;
+/* SMALL SCREEN LINK STYLES
+    primary-btn is used in the nav with NO background
+    secondary-btn is the learn more button 
+    tertiary-btn is used ONCE on the home page; play game WITH A BACKGROUND
+*/
+
+.primary-btn, .secondary-btn, .tertiary-btn {
+  display: inline-block;
+  font-size: 14px;
   font-weight: 400;
+  margin: 1rem 0;
+  padding: 12px 16px;
+}
+.primary-btn, .tertiary-btn { 
   letter-spacing: 1.92px;
-  margin: ;
   text-transform: uppercase;
 }
+.primary-btn {
+  border: solid 2px var(--color-red);
+  /*nav has a different color of white, is that okay? */
+  color: var(--color-nav-white);
+}
+.secondary-btn {
+  background-color: var(--color-black);
+  border: solid 1.7px var(--color-purple-lght);
+  color: var(--color-white);
+}
+.secondary-btn span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondary-btn svg {
+  margin-left: 10px;
+}
+/* HOVER STYLES */
 .primary-btn:hover {
   background-color: var(--color-red);
 }
-
-/* learn more */
-.secondary-btn {
-  background-color: var(--color-black);
-  border-radius: ;
-  border: solid 1.7px var(--color-prpl-lght);
-  color: var(--color-white);
-  display: flex;
-  font-family: ;
-  font-size: 24px;
-  font-weight: 400;
-  margin: 32px 0;
-  text-transform: ;
+.secondary-btn:hover svg {
+  margin-left: 16px;
+  transition: 200ms ease-in-out;
+}
+.tertiary-btn:hover {
+  background-color: var(--color-red-drk);
+  border: solid 1px var(--color-red-drk);
 }
 
-.secondary-btn svg {
-  align-self: center;
+/* LARGER SCREEN SIZE LINK STYLES */
+@media screen and (min-width: 900px) {
+  .primary-btn, .secondary-btn, .tertiary-btn {
+    font-size: 18px;
+    padding: 20px 30px;
+  }
 }
-/*
-.secondary-btn svg:hover {
 
+/* inline-link style */
+.inline-link {
+  color: var(--color-red);
+  font-style: italic;
 }
-*/
-.tertiary-btn {
-  background-color: ;
-  border-radius: ;
-  border: ;
-  color: ;
-  font-family: ;
-  font-size: ;
-  font-weight: ;
-  letter-spacing: ;
-  margin: ;
-  padding: ;
-  text-transform: ;
+.inline-link:hover {
+  color: var(--color-red-drk);
+  text-decoration: none;
 }
 /**************************************
 FOOTER styles
@@ -216,60 +257,85 @@ FOOTER styles
 
 footer {
   background-color: var(--color-black-drk);
-  height:;
   bottom: ;
+  min-height: 400px;
   left: ;
-  right: ;
-  background-color: ;
-  width: 100%;
   margin: ;
-  display: ;
-  justify-content: ;
-  align-items: ;
+  right: 0;
+  width: 100vw;
+}
+.footer-grid {
+  align-items: flex-start;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  margin: ;
+  padding: 72px 100px;
 }
 footer p {
-  padding: ;
-  color: ;
   font-size: 14px;
+  max-width: 450px;
+  color: var(--color-nav-white);
+  margin: 0 0 16px 0;
 }
-
 footer a {
   color: ;
-  text-decoration: ;
-  padding: ;
-  border-bottom: ;
+  font-size: 14px;
 }
 footer a:hover {
   border-bottom: ;
   transition: ;
   font-style: ;
 }
+.footer-nav {
+   display: flex;
+   flex-flow: column nowrap;
+   justify-content: space-between;
+   height: 250px;
+   min-width: 200px;
+}
+.footer-nav a {
+  color: var(--color-white);
+  display: block;
+}
 /************************************
 Primary Navigation
 **************************************/
+header {
+  margin: 0 auto;
+  padding: 0 2%;
+}
 nav {
-
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
-
 nav a {
-  color: var(--color-nav-white);
-  font-size: 20px;
-  font-weight: 100;
+  color: var(--color-white);
+  font-size: 14px;
+  font-weight: 300;
   letter-spacing: 1.6px;
-  line-height: 1.2;
-  margin: 0 18px;
-  padding-bottom: 12px;
+  margin: 0 20px;
+  padding: 20px 0;
 }
+
+@media screen and (min-width: 800px) {
+  nav a {
+    font-size: 20px;
+  }
+}
+
 nav button {
   display: inline-block;
 }
+
 #current-pg {
   border-bottom: solid 2px var(--color-red);
-  font-weight: 600;
-  padding-bottom: 12px;
+  font-weight: 700;
 }
+
 nav a:hover {
-  border-bottom:  solid 2px var(--color-red);
+  border-bottom: solid 2px var(--color-red);
 }
 /**************************************
 Hero Component
@@ -278,25 +344,285 @@ Hero Component
   font-weight: 600;
   font-size: 27px;
 }
+
+.hero-example {
+  height: 80vh;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.hero-p {
+  font-weight: 600;
+  font-size: 27px;
+  max-width: 950px;
+}
 /**************************************
 div typography page
 ***************************************/
 
-div {
+.example {
   background-color: var(--color-black);
   border-radius: 8px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 1);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, .3);
   padding: 5%;
 }
 
-.fixed-nav {
-    height: 100%; 
-    width: 10rem;
-    position: fixed;
-    z-index: 1; 
-    top: 0;
-    left: 0;
-    background-color: var(--color-black);
-    overflow-x: hidden; 
-    padding-left: 1rem;
+/* BAAD 
+.example-img-txt {
+}
+@media screen (min-width: 850px) {
+  .example-img-txt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 14px 11px;
+    /*
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 16px;
+    max-width: 1280px;
+    margin: auto;
+    */
   }
+  /* 
+  .txt {
+    grid-column: 1 span 6;
+  }
+  .img {
+    grid-column: 7 span 6;
+  }
+}
+*/
+
+/**************************************
+ 
+***************************************/
+.grid12col {
+  padding: 6.5rem 140px; /* 6.5rem ~= 105px from the prototype */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  grid-gap: 16px;
+  column-width: 122px;
+}
+.p-col1-4 {
+  color: var(--color-white);
+  grid-column: 1 / span 4;
+}
+.img-col5-8 {
+  grid-column: 5 / span 8;
+  padding-left: 61px; /*half of 122px which is the size of column width*/
+}
+/**************************************
+grid play
+***************************************/
+
+.grid-2col {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1% 2%;
+}
+.hero-text {
+  grid-column: 1 / span 1;
+}
+.hero-img {
+  grid-column: 2 / span 1;
+}
+
+.grid-example, .grid-example-prpl {
+  padding: 6.5rem 140px; /* 6.5rem ~= 105px from the prototype */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  grid-gap: 16px;
+  column-width: 122px;
+}
+.grid-example-prpl {
+  background-color: var(--color-purple);
+}
+.p-col1-4 {
+  color: var(--color-white);
+  grid-column: 1 / span 4;
+}
+.img-col5-8 {
+  grid-column: 5 / span 8;
+  padding-left: 61px; /*half of 122px which is the size of column width*/
+}
+
+/**************************************
+REAL GRID!!!!!!!!!
+***************************************/
+/* mobile grid */
+.grid {
+  padding: 2rem 0;
+}
+.col8-5, .col1-5 { /* text */
+  padding: 0 1rem;
+}
+
+/* >800px-1200px screen width */
+@media screen and (min-width: 800px) {
+  .grid {
+    align-items: center;
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .col8-5, .col1-5 { /* text */
+    padding: 0 1.5rem;
+  }
+}
+
+/* >1200 screen width */
+@media screen and (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 auto;
+    padding: 6.5rem 140px;
+  }
+  .col1-6 { /* image LEFT */
+    grid-column: 1 / span 6;
+  }
+  .col8-5 { /* text RIGHT */
+    grid-column: 8 / span 5;
+    padding: 0;
+  }
+  .col1-5 { /* text LEFT */
+    grid-column: 1 / span 5;
+    padding: 0;
+  }
+  .col7-6 { /* image RIGHT */
+    grid-column: 7 / span 6;
+  }
+  /*
+  .grid h3 {
+    grid-column: 1 / span 12;
+    text-align: center;
+  }
+  */
+}
+.amnesia-book {
+  font-style: italic;
+  line-height: 1.6;
+  font-size: 24px;
+}
+.special-thanks {
+  max-width: 950px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 72px 0;
+  margin: 0 auto;
+  column-gap: 1rem;
+}
+.special-thanks h3 {
+  text-align: center;
+  grid-column: 1 / span 2;
+}
+.spcl-thnks-lft {
+  grid-column: 1 / span 1;
+}
+.spcl-thnks-rght {
+  grid-column: 2 / span 1;
+}
+.spcl-thnks-lft, .spcl-thnks-rght {
+  height: 580px;
+  width: 460px;
+}
+/* full width flex */
+
+.full-width-flex {
+  display: grid;
+  grid-template-columns: 1fr 5fr 5fr 1fr;
+  align-items: center;
+  padding: 105px 0;
+  margin: auto 0;
+}
+.text-end {
+  grid-column: 2 / span 1;
+  padding-right: 3.5rem;
+}
+.txt-end p {
+  max-width: 400px;
+}
+.img-end {
+  grid-column: 3 / span 2;
+}
+.p-alone {
+  max-width: 950px;
+  padding: 105px 0 72px 0;
+  margin: 0 auto;
+}
+/* FLEX */
+.img-txt-flex {
+  align-items: center;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  column-gap: 3rem;
+  max-width: 700px;
+  margin: auto 0;
+  padding: 32px 0;
+}
+@media screen and (min-width: 800px) {
+  .img-txt-flex {
+    flex-direction: row;
+    max-width: 1200px;
+    padding: 105px 0;
+    margin: 0 auto;
+    column-gap: 1rem;
+  }  
+  .flex-txt {
+    padding: 0 16px;
+    max-width: 430px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .img-txt-flex {
+    max-height: 645px;
+    /* column gap is 153px on prototype */
+    column-gap: 153px;
+    padding: 105px 140px;
+    min-width: 100%;
+  }
+  .flex-img {
+    max-width: 712px;
+  }
+}
+
+section {
+  padding: 0;
+  margin: 0;
+}
+
+/*****************************************
+DISCH BOOK
+*****************************************/
+.disch-books {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0 105px 0;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+.book {
+  padding: 0 1rem;
+}
+.book p {
+  margin: 10px 0 0 0;
+}
+.subtitle {
+  font-style: italic;
+  font-weight: 100px;
+  color: rgba(255,255,255,.5);
+  font-size: 15px;
+  margin-top: 0;
+}
