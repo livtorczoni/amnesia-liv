@@ -1,3 +1,51 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /************************************
 MASTER LAYOUT
 ************************************/
@@ -6,15 +54,16 @@ body  {
   margin: 0 auto;
   background-color: #1c1c22;
 }
-
 main {
   padding: ;
   margin: ;
-
 }
-
 img {
   width: 100%;
+}
+section {
+  padding: 16px 0;
+  margin: 0;
 }
 /************************************
 COLORS
@@ -27,11 +76,9 @@ html {
   --color-black-drk: #0E0E0F;
   --color-purple: #160323;
   --color-purple-lght: #7C42B9;
-  --color-red: #CE3B27;
-  --color-red-drk: #AD3121;
+  --color-red: #AD3121;
+  --color-red-drk: #CE3B27;
   --color-nav-white: #E4E4E4;
-
-  --font-primary: 'Montserrat', sans-serif;
 }
 
 .bg-prpl {
@@ -40,19 +87,25 @@ html {
 /************************************
 typography
 ************************************/
+html {
+	font-family: 'Montserrat', sans-serif;
+	--font-primary: 'Montserrat', sans-serif;
+}
 h1, h2, h3, h4, h5, h6, p {
   color: var(--color-white);
 }
 h2, h3, h4, h5, h6, p {
   font-family: 'Montserrat', sans-serif;
 }
-h1, h2, h3, h4 {
-  line-height: 1.2;
+h3, h4, h5, h6 {
+  margin: 1rem 0;
+}
+h1, h2, h3, h4, h6 {
+  line-height: 1.5;
 }
 h1, h3 {
    text-transform: uppercase;
 }
-
 h1 {
   font-family: 'mostra-nuova', sans-serif;
   font-size: 48px;
@@ -64,36 +117,41 @@ h1 {
 h2 {
   font-size: 30px;
   font-weight: 200;
-  letter-spacing: 2.4px;
+  letter-spacing: 1px;
 }
 
 h3 {
   font-size: 26px;
   font-weight: 500;
   letter-spacing: 3.12px;
-  line-height: 1.6;
+  margin: 1rem 0;
 }
 
 h4 {
-  font-style: 22px;
+  font-size: 22px;
   font-weight: 700;
   letter-spacing: 0px;
 }
 h5 {
   font-weight: 700;
   letter-spacing: 1.2px;
+  font-size: 20px;
 }
 
-/* heading media queries */
-@media screen and (min-width: 950px) { 
+h6 {
+  font-weight: 700;
+  font-size: 16px;
+}
+/* heading large screen sizes */
+@media screen and (min-width: 850px) { 
   h1 {
     font-size: 120px;
     line-height: ;
   }
 
   h2 {
-    font-size: 70px;
-    letter-spacing: 7.7px;
+    font-size: 60px;
+    letter-spacing: 2px;
   }
 
   h3 {
@@ -121,15 +179,13 @@ p {
   line-height: 1.6;
   max-width: 950px;
 }
-
 @media screen and (min-width: 950px) {
   p {
     font-size: 18px;
     line-height: 1.7;
-    margin: 2.6rem 0; /*2.6rem ~= 42px from prototype */
+    margin: 1.5rem 0;
   }
 }
-
 a {
   color: var(--color-red);
   font-size: ;
@@ -140,24 +196,6 @@ a {
 
 a:hover, button:hover {
   cursor: pointer;
-}
-.disch-quote {
-  border-left: 7px solid white;
-  max-width: 850px;
-  margin: 72px 0;
-}
-blockquote {
-  font-size: 30px;
-  letter-spacing: 2.3px;
-  font-weight: 600;
-  line-height: 45px;
-  margin: 0;
-  padding-left: 1.5rem;
-}
-blockquote span {
-  font-weight: 200;
-  font-style: italic;
-  font-size: 20px;
 }
 /**************************************
 Buttons and LINKS
@@ -191,13 +229,13 @@ button:active {
     secondary-btn is the learn more button 
     tertiary-btn is used ONCE on the home page; play game WITH A BACKGROUND
 */
-
 .primary-btn, .secondary-btn, .tertiary-btn {
   display: inline-block;
-  font-size: 14px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   margin: 1rem 0;
-  padding: 12px 16px;
+  padding: 14px 16px;
+  text-align: center;
 }
 .primary-btn, .tertiary-btn { 
   letter-spacing: 1.92px;
@@ -205,13 +243,13 @@ button:active {
 }
 .primary-btn {
   border: solid 2px var(--color-red);
-  /*nav has a different color of white, is that okay? */
-  color: var(--color-nav-white);
+  color: var(--color-white);
 }
 .secondary-btn {
-  background-color: var(--color-black);
-  border: solid 1.7px var(--color-purple-lght);
+  background-color: transparent;
+  border: 2px solid var(--color-purple-lght);
   color: var(--color-white);
+  min-width: 110px;
 }
 .secondary-btn span {
   display: flex;
@@ -221,9 +259,17 @@ button:active {
 .secondary-btn svg {
   margin-left: 10px;
 }
+.tertiary-btn {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  border: 2px solid var(--color-red);
+  display: inline-block;
+  margin: 1.5rem 0;
+}
 /* HOVER STYLES */
 .primary-btn:hover {
   background-color: var(--color-red);
+  transition: 250ms ease-in-out;
 }
 .secondary-btn:hover svg {
   margin-left: 16px;
@@ -231,14 +277,14 @@ button:active {
 }
 .tertiary-btn:hover {
   background-color: var(--color-red-drk);
-  border: solid 1px var(--color-red-drk);
+  border: 2px solid var(--color-red-drk);
+  transition: 200ms ease-in-out;
 }
-
-/* LARGER SCREEN SIZE LINK STYLES */
+/* 900 screen width */
 @media screen and (min-width: 900px) {
   .primary-btn, .secondary-btn, .tertiary-btn {
     font-size: 18px;
-    padding: 20px 30px;
+    padding: 16px 20px;
   }
 }
 
@@ -246,224 +292,365 @@ button:active {
 .inline-link {
   color: var(--color-red);
   font-style: italic;
+  font-weight: 500;
 }
 .inline-link:hover {
   color: var(--color-red-drk);
   text-decoration: none;
+  transition: 250ms ease-in-out;
 }
 /**************************************
 FOOTER styles
 *****************************************/
-
+/**** 
+FOOTER NEEDS ATTENTION! NOT GREAT
+check out the li and ul and figure out if that's the best idea
+****/
+/* mobile styles */
 footer {
-  background-color: var(--color-black-drk);
-  bottom: ;
-  min-height: 400px;
-  left: ;
-  margin: ;
+  color: var(--color-nav-white);
+  min-height: 120px;
   right: 0;
-  width: 100vw;
+  width: 100%;
 }
-.footer-grid {
-  align-items: flex-start;
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  margin: ;
-  padding: 72px 100px;
-}
-footer p {
+footer p, footer a {
   font-size: 14px;
   max-width: 450px;
-  color: var(--color-nav-white);
   margin: 0 0 16px 0;
 }
-footer a {
-  color: ;
-  font-size: 14px;
-}
 footer a:hover {
+  color: var(--color-red-drk);
   border-bottom: ;
   transition: ;
   font-style: ;
 }
-.footer-nav {
-   display: flex;
-   flex-flow: column nowrap;
-   justify-content: space-between;
-   height: 250px;
-   min-width: 200px;
+.fttr-logo, .fttr-abt, .fttr-icons, .fttr-cntct h6, .fttr-nav {
+  display: none;
 }
-.footer-nav a {
-  color: var(--color-white);
-  display: block;
+.footer-grid {
+  background-color: var(--color-black-drk);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 1rem 0;
+  /*
+  padding: 72px 100px;
+  */
 }
+.fttr-cntct a {
+  color: var(--color-red);
+}
+@media screen and (max-width: 599px) {
+  .copyright, .fttr-cntct {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .copyright p {
+    margin-bottom: 0;
+  }
+}
+/* tablet styles */
+@media screen and (min-width: 600px) {
+  .footer-grid {
+  }
+  .fttr-logo, .fttr-abt, .fttr-icons, .fttr-cntct h6, .fttr-nav {
+    display: inline;
+  }
+  /* footer nav links */
+  .footer-nav {
+     display: flex;
+     flex-flow: column nowrap;
+     justify-content: space-between;
+     height: 250px;
+     min-width: 200px;
+  }
+  .footer-nav a {
+    color: var(--color-white);
+  }
+  .footer-nav a:hover {
+    border-bottom: 1px solid var(--color-red);
+    transition: 200ms;
+  }
+}
+
 /************************************
 Primary Navigation
 **************************************/
 header {
   margin: 0 auto;
   padding: 0 2%;
+  display: block;
+  background-color: transparent;
 }
-nav {
+/* desktop nav set to invisible until 850 */
+.nav-dsktp {
+  display: none;
+}
+/* mobile nav (subject to change) */
+.mobile-nav-temp {
+  background-color: var(--color-black);
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  left: 0;
+  height: 56px;
+  position: fixed;
 }
-nav a {
-  color: var(--color-white);
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1.6px;
-  margin: 0 20px;
-  padding: 20px 0;
+.mobile-title h6 {
+  font-size: 20px;
+  font-weight: 500;
 }
-
-@media screen and (min-width: 800px) {
-  nav a {
-    font-size: 20px;
-  }
+.hamburger {
+  padding: 0 32px 0 1rem;
 }
-
-nav button {
-  display: inline-block;
+.hamburger span {
+  background: var(--color-white);
+  display: block;
+  width: 27px;
+  height: 3px;
+  margin-bottom: 5px;
+  position: relative;
 }
-
+/* current page */
 #current-pg {
   border-bottom: solid 2px var(--color-red);
   font-weight: 700;
+  padding-bottom: 8px;
 }
-
-nav a:hover {
-  border-bottom: solid 2px var(--color-red);
-}
-/**************************************
-Hero Component
-***************************************/
-#hero p {
-  font-weight: 600;
-  font-size: 27px;
-}
-
-.hero-example {
-  height: 80vh;
-  margin: 0 auto;
-  max-width: 1200px;
-}
-.hero-p {
-  font-weight: 600;
-  font-size: 27px;
-  max-width: 950px;
-}
-/**************************************
-div typography page
-***************************************/
-
-.example {
-  background-color: var(--color-black);
-  border-radius: 8px;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, .3);
-  padding: 5%;
-}
-
-/* BAAD 
-.example-img-txt {
-}
-@media screen (min-width: 850px) {
-  .example-img-txt {
-    display: flex;
-    justify-content: center;
+/********
+DESKTOP nav ACTIVATED 768px;
+*********/
+@media screen and (min-width: 768px) {
+  .mobile-nav-temp {
+    display: none;
+  }
+  .nav-dsktp {
     align-items: center;
-    padding: 14px 11px;
-    /*
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    margin: 16px;
-    max-width: 1280px;
-    margin: auto;
-    */
+    background-color: rgba(0,0,0,0);
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: fixed;
+    width: 100vw;
   }
-  /* 
-  .txt {
-    grid-column: 1 span 6;
+  nav {
+    font-size: 14px;
+    margin: 0 1rem 0 0;
   }
-  .img {
-    grid-column: 7 span 6;
+  #logo {
+    width: 160px;
+  }
+  .nav-item {
+    color: var(--color-white);
+    font-weight: 400;
+    letter-spacing: 1.4px;
+    padding: 0 0 8px 0;
+    margin: 0 auto;
+  }
+  .nav-item:hover {
+    border-bottom: solid 2px var(--color-red);
+    transition: 100ms ease-in-out;
+  }
+  nav .primary-btn {
+  }
+  nav li {
+    display: inline-block;
+    margin: 0 8px;
   }
 }
-*/
-
+@media screen and (min-width: 1000px) {
+  #logo {
+    width: 210px;
+  }
+  nav {
+    font-size: 1rem;
+  }
+  nav li {
+    margin: 0 1rem;
+  }
+  .nav-item, #current-pg {
+    font-size: 1rem;
+    padding: 0 0 14px 0;
+    letter-spacing: 1.6px;
+  }
+}
 /**************************************
- 
+HERO COMPONENT
 ***************************************/
-.grid12col {
-  padding: 6.5rem 140px; /* 6.5rem ~= 105px from the prototype */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+.author-hero, .restoration-hero, .gmhistory-hero, .credits-hero, .hm-hero, .playgm-hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow-wrap: break-word;
+  width: 100%;
+  height: 60vh;
+}
+.author-hero {
+  background-image: linear-gradient(transparent, 20%, #1c1c22), url("../img/Author-hero-img.png");
+}
+.credits-hero {
+  background-image: linear-gradient(transparent, #1c1c22), url("../img/");
+}
+.hm-hero {
+  background-image: linear-gradient(transparent,1%, #1c1c22), url("../img/hm-hero.png");
+}
+.restoration-hero {
+  background-image: linear-gradient(transparent, #1c1c22), url("../img/");
+}
+.gmhistory-hero {
+  background-image: linear-gradient(transparent, #1c1c22), url("../img/gmhistory-hero.jpeg");
+}
+.playgm-hero {
+	background-image: linear-gradient(transparent, #1c1c22), url("../img/gmhistory-hero.jpeg");
+}
+@media screen and (min-width: 900px) {
+  .author-hero, .restoration-hero, .gmhistory-hero, .credits-hero, .hm-hero, .playgm-hero {
+    height: 100vh;
+  }
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  margin: 0 16px;
+  height: 100%;
   justify-content: center;
+}
+.hero-copy a {
+  max-width: 120px;
+  text-align: center;
+}
+/* tablet styles */
+@media screen and (min-width: 600px) {
+  .hero-copy {
+    max-width: 1400px;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  .hero-copy h1 {
+    font-size: 56px;
+    margin: 1rem 0;
+  }
+  .hero-copy p {
+    font-size: 24px;
+  }
+}
+/* small desktop */
+@media screen and (min-width: 950px) {
+  .hero-copy {
+    max-width: 1400px;
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+  .hero-copy h1 {
+    margin: 1rem 0;
+    font-size: 120px;
+  }
+  .hero-copy p {
+    font-size: 27px;
+    max-width: 1400px;
+  }
+}
+/* large desktop */
+@media screen and (min-width: 1200px) {
+  .hero-copy {
+    padding: 0 140px;
+  }
+}
+/*****
+home page is weird; it has a lot of copy 
+*****/
+.hm-hero {
+  margin: 0 0 1rem 0;
+  height: 120%;
+}
+#hm-hero-copy {
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  align-items: center;
-  grid-gap: 16px;
-  column-width: 122px;
-}
-.p-col1-4 {
-  color: var(--color-white);
-  grid-column: 1 / span 4;
-}
-.img-col5-8 {
-  grid-column: 5 / span 8;
-  padding-left: 61px; /*half of 122px which is the size of column width*/
-}
-/**************************************
-grid play
-***************************************/
-
-.grid-2col {
-  background-color: black;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1% 2%;
-}
-.hero-text {
-  grid-column: 1 / span 1;
-}
-.hero-img {
-  grid-column: 2 / span 1;
-}
-
-.grid-example, .grid-example-prpl {
-  padding: 6.5rem 140px; /* 6.5rem ~= 105px from the prototype */
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  padding: 0 16px;
+  height: 100vh;
   justify-content: center;
-  margin: 0 auto;
-  align-items: center;
-  grid-gap: 16px;
-  column-width: 122px;
 }
-.grid-example-prpl {
-  background-color: var(--color-purple);
+#hm-hero-copy a {
+  max-width: 130px;
 }
-.p-col1-4 {
-  color: var(--color-white);
-  grid-column: 1 / span 4;
+#hm-hero-copy p {
+  margin: 1rem 0 .5rem 0;
 }
-.img-col5-8 {
-  grid-column: 5 / span 8;
-  padding-left: 61px; /*half of 122px which is the size of column width*/
+/* 768 screen width */
+@media screen and (min-width: 768px) {
+  #hm-hero-copy {
+    padding: 3rem 20px;
+  }
+  #hm-hero-copy h1 {
+    font-size: 60px;
+  }
+  #hm-hero-copy h2 {
+    font-size: 38px;
+  }
+  #hm-hero-copy p {
+    font-size: 22px;
+  }
 }
-
+/* 1300px screen width */
+@media screen and (min-width: 1200px) {
+  #hm-hero-copy {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  #hm-hero-copy h1 {
+    font-size: 100px;
+  }
+  #hm-hero-copy h2 {
+    font-size: 60px;
+  }
+  #hm-hero-copy p {
+    font-size: 24px;
+    max-width: 1200px;
+  }
+}
+.no-wrap {
+  white-space: nowrap;
+}
 /**************************************
-REAL GRID!!!!!!!!!
+GRID 12 COLUMN FOR IMAGES AND TEXT
 ***************************************/
-/* mobile grid */
 .grid {
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
-.col8-5, .col1-5 { /* text */
-  padding: 0 1rem;
+.grid-txt {
+  padding: 1rem;
+}
+/* "I will have order!" - Professor Umbridge */
+/* Used on home page; used on author; used on... */
+@media screen and (max-width: 800px) {
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .frst {
+    order: 1;
+  }
+  .scnd {
+    order: 2;
+  }
+  .thrd {
+    order: 3;
+  }
+  .frth {
+    order: 4;
+  }
+  .ffth {
+    order: 5;
+  }
 }
 
 /* >800px-1200px screen width */
@@ -486,7 +673,7 @@ REAL GRID!!!!!!!!!
   .grid {
     grid-template-columns: repeat(12, 1fr);
     margin: 0 auto;
-    padding: 6.5rem 140px;
+    padding: 3rem 100px;
   }
   .col1-6 { /* image LEFT */
     grid-column: 1 / span 6;
@@ -502,64 +689,364 @@ REAL GRID!!!!!!!!!
   .col7-6 { /* image RIGHT */
     grid-column: 7 / span 6;
   }
-  /*
-  .grid h3 {
-    grid-column: 1 / span 12;
-    text-align: center;
+  .col6-7 {
+    grid-column: 6 / span 7;
   }
-  */
+  .grid-img {
+    padding: 52px 0;
+  }
 }
+/**************************************
+RECONSTRUCTION TEAM CIRCLES - 
+needs work; 
+ON HOME & RESTORATION PAGES
+***************************************/
+.recon-tms {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+.recon-tms img {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.team {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: break-word;
+}
+/* needs work */
+.tm-txt {
+  text-align: center;
+}
+/*
+@media screen and (min-width: 600px) {
+  .recon-tms {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/**************************************
+HOME PAGE STYLES
+/**************************************
+***************************************/
+/* FEATURED WORK: NEEDS JAVASCRIPT */
+.featured-itm p {
+  font-size: 14px;
+}
+.featured-itm {
+  padding: 12px;
+}
+.ftrd-img {
+  padding-bottom: .7rem;
+}
+.featured-content {
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 700px) {
+  .featured-content {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0;
+    margin: auto 0;
+  }
+  .ftrd-txt {
+    max-width: 350px;
+  }
+  .ftrd-txt p {
+    margin: 1rem 0;
+  }
+  .ftrd-img {
+    max-width: 410px;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .featured-itm {
+    padding: 1rem;
+  }
+  .featured-content {
+    padding: 0 100px;
+  }
+}
+/* 4 square component */
+.sqr-txt-lft, .sqr-txt-rght {
+  padding: 16px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 801px) {
+  .flex-4sqr {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100%;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+  }
+  .sqr-txt-lft, .sqr-txt-rght {
+    align-self: center;
+    padding: 2rem;
+    max-width: 675px; /* from prototype */
+  }
+  .sqr-img-lft, .sqr-img-rght {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/**************************************
+COPY ON ITS OWN; NO IMAGE
+***************************************/
+/* lone copy */
+.p-alone {
+  margin: 0 16px;
+  padding: 32px 0;
+}
+/* 700px screen width media queries */
+@media screen and (min-width: 950px) {
+  .p-alone {
+    margin: 0 auto;
+    max-width: 950px;
+  }
+}
+/**************************************
+**************************************
+AUTHOR PAGE STYLES BELOW 
+**************************************
+*************************************/
+
+.disch-name {
+  font-size: 22px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#abt-disch {
+  padding: 3rem 0;
+}
+@media screen and (min-width: 600px) {
+  #abt-disch {
+    padding: 7rem 0;
+  }
+}
+
+/**********************************************
+QUOTES - DISCH QUOTES, BLOCKQUOTE AND FAN QUOTES
+*************************************************/
+.disch-quote {
+  max-width: 850px;
+  margin: 32px 0;
+}
+blockquote {
+  border-left: 4px solid white;
+  font-size: 22px;
+  letter-spacing: 2.3px;
+  font-weight: 600;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  line-height: 1.4;
+}
+blockquote span {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 20px;
+}
+/* 700px screen size */
+@media screen and (min-width: 700px) {
+  .disch-quote {
+    padding: 3rem 0;
+    max-width: 950px;
+  }
+  blockquote {
+    font-size: 30px; 
+    line-height: 45px;
+    margin: 0;
+    padding-left: 2rem;
+    border-left: 7px solid white;
+  }
+}
+/**************************************
+DISCH BOOKS - AUTHOR PAGE
+***************************************/
 .amnesia-book {
   font-style: italic;
   line-height: 1.6;
   font-size: 24px;
 }
+/**************************************
+SPECIAL THANKS - AUTHOR PAGE
+***************************************/
 .special-thanks {
-  max-width: 950px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 72px 0;
-  margin: 0 auto;
-  column-gap: 1rem;
+  padding: 32px 0;
 }
-.special-thanks h3 {
-  text-align: center;
-  grid-column: 1 / span 2;
+.spcl-thnks-container {
+  position: relative;
+  text-align: left;
+  padding-bottom: 1rem;
 }
-.spcl-thnks-lft {
-  grid-column: 1 / span 1;
+.spcl-thnks-txt {
+  position: absolute;
+  bottom: 2rem;
+  left: 10px;
 }
-.spcl-thnks-rght {
-  grid-column: 2 / span 1;
+.gradient-spclThnks {
+  background: url("../img/gregory.png"), linear-gradient(transparent, #1c1c22);
 }
-.spcl-thnks-lft, .spcl-thnks-rght {
-  height: 580px;
-  width: 460px;
+.special-thanks h3  {
+  margin: 1rem;
 }
-/* full width flex */
-
-.full-width-flex {
-  display: grid;
-  grid-template-columns: 1fr 5fr 5fr 1fr;
-  align-items: center;
-  padding: 105px 0;
-  margin: auto 0;
+.spcl-thnks-txt {
+  padding: 1rem;
 }
-.text-end {
-  grid-column: 2 / span 1;
-  padding-right: 3.5rem;
-}
-.txt-end p {
+.spcl-thnks-txt p {
+  font-size: 14px;
+  margin: 0;
   max-width: 400px;
 }
-.img-end {
-  grid-column: 3 / span 2;
+.spcl-thnks-txt h5 {
+  font-size: 20px;
+  line-height: 2;
+  margin: 0;
 }
-.p-alone {
-  max-width: 950px;
-  padding: 105px 0 72px 0;
+/* 700px media query */
+@media screen and (min-width: 700px) {
+  .special-thanks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 4fr;
+    column-gap: 2rem;
+    margin: 0 auto;
+    max-width: 900px;
+  }
+  .spcl-thnks-container {
+    padding-bottom: 0;
+  }
+  .special-thanks h3 {
+    margin: 0 0 42px 0;
+    text-align: center;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+  .special-thnks .scnd {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 1;
+  }
+  .special-thnks .thrd {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+  }
+
+}
+/*****************************************
+DISCH BOOK
+*****************************************/
+.disch-books {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 0 105px 0;
   margin: 0 auto;
+  max-width: 1100px;
 }
+.book {
+  padding: 0 1rem;
+}
+.book p {
+  margin: 10px 0 0 0;
+}
+.subtitle {
+  font-style: italic;
+  font-weight: 100px;
+  color: rgba(255,255,255,.5);
+  font-size: 15px;
+  margin-top: 0;
+}
+
+/**************************************
+**************************************
+bunch of junk below here:
+I DON'T KNOW
+***************************************
+***************************************/
+/*
+.grid12col {
+  padding: 6.5rem 140px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  grid-gap: 16px;
+  column-width: 122px;
+}
+.p-col1-4 {
+  color: var(--color-white);
+  grid-column: 1 / span 4;
+}
+.img-col5-8 {
+  grid-column: 5 / span 8;
+  padding-left: 61px; 
+}
+*/
+/**************************************
+grid play
+***************************************/
+.grid-2col {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1% 2%;
+}
+.grid-example, .grid-example-prpl {
+  padding: 6.5rem 140px; /* 6.5rem ~= 105px from the prototype */
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  grid-gap: 16px;
+  column-width: 122px;
+}
+.grid-example-prpl {
+  background-color: var(--color-purple);
+}
+.p-col1-4 {
+  color: var(--color-white);
+  grid-column: 1 / span 4;
+}
+.img-col5-8 {
+  grid-column: 5 / span 8;
+  padding-left: 61px; /*half of 122px which is the size of column width*/
+}
+/**************************************
+ NOT IMPORTANT - typography pagE
+***************************************/
+.example {
+  background-color: var(--color-black);
+  border-radius: 8px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, .3);
+  padding: 5%;
+}
+
+/**************************************
+flex - not in use; not good
+***************************************/
 /* FLEX */
 .img-txt-flex {
   align-items: center;
@@ -595,34 +1082,4 @@ REAL GRID!!!!!!!!!
   .flex-img {
     max-width: 712px;
   }
-}
-
-section {
-  padding: 0;
-  margin: 0;
-}
-
-/*****************************************
-DISCH BOOK
-*****************************************/
-.disch-books {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 0 105px 0;
-  margin: 0 auto;
-  max-width: 1100px;
-}
-.book {
-  padding: 0 1rem;
-}
-.book p {
-  margin: 10px 0 0 0;
-}
-.subtitle {
-  font-style: italic;
-  font-weight: 100px;
-  color: rgba(255,255,255,.5);
-  font-size: 15px;
-  margin-top: 0;
 }

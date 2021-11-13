@@ -7,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 		<!-- favicon -->
-		<link rel="icon" href="imgs/favicon.png" sizes="18x18">
+		<link rel="icon" href="img/favicon-circle-32x32.png" sizes="18x18">
 
 		<!-- fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,36 +24,62 @@
     <body>
 
     	<header>
-    		<nav>
-	    		<a href="#" id="current-pg">Author</a>
-	    		<a href="#">Game History</a>
-	    		<a href="#">Restoration</a>
-	    		<a href="#">Credits</a>
-	    		<a class="primary-btn" href="#">Play Game</a>
-	    	</nav>
+    		<!-- not real, just trying to see what it will look like for now -->
+			<div class="mobile-nav-temp">
+
+				<div class="hamburger">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+
+				<div class="mobile-title">
+	    			<h6>Author</h6>
+	    		</div>
+	    	</div>
+
+	    	<!-- DESKTOP NAV -->
+			<div class="nav-dsktp">
+				<!-- worng nav -->
+				<a id="logo" href="index-hm.html"><img style="" src="img/logo.png" alt=""></a>
+				<nav>
+				<!-- should be ul and li -->
+					<ul>
+				    	<li><a href="author.html" id="current-pg" class="nav-item">Author</a></li>
+				    	<li><a href="#" class="nav-item">Game History</a></li>
+				    	<li><a href="#" class="nav-item">Restoration</a></li>
+				    	<li><a href="#" class="nav-item">Credits</a></li>
+				    	<li><a class="primary-btn" href="#">Play Game</a></li>
+				    </ul>
+				</nav>
+			</div>
 		</header>     	
 	       
 	    <main>
-		    <section class="hero-example">
-		    	<h1>Thomas M. Disch</h1>
-		    	<p class="hero-p">Quiere la boca exhausta vid, kiwi, piña y fugaz jamón. Fabio me exige, sin tapujos, que añada cerveza al whisky. Jovencillo emponzoñado de whisky, ¡qué figurota exhibes! La cigüeña tocaba cada vez mejor.</p>
-		    </section>
-
-	    	<section class="">
-	    		<div class="p-alone">
-
-		    		<p>An introduction to Disch’s work, common themes he explores, number of works published, most popular works. Voyez ce jeu exquis wallon, de graphie en kit mais bref. Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à.</p>
-
-		    		<div class="disch-quote">
-
-		    			<blockquote>“Creativity is the ability to see patterns where none exist.”<br><span>— Thomas M. Disch<span></blockquote>
-
-		    		</div>
-
-		    		<p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens Vögel Rüben, Joghurt und Quark. "Fix, Schwyz!" quäkt Jürgen blöd vom Paradß. Find obituaries on Disch in <a href="" class="inline-link">The New York Times</a>, <a href="" class="inline-link">The Guardian</a>, and <a href="" class="inline-link">The New Yorker</a>.</p>
-		    	</div>
+	    	<!-- hero section -->
+	    	<section class="author-hero">
+	    		<div class="hero-copy">
+	    			<h1>Thomas <span class="no-wrap">M. Disch</span></h1>
+	    			<p>Quiere la boca exhausta vid, kiwi, piña y fugaz jamón. Fabio me exige, sin tapujos, que añada cerveza al whisky. Jovencillo emponzoñado de whisky, ¡qué figurota exhibes! La cigüeña tocaba cada vez mejor.</p>
+	    		</div>
 	    	</section>
 
+	    	<!-- introduction to thomas disch -->
+	    	<section class="p-alone" id="abt-disch">
+	    		<p><span class="disch-name">Thomas M. Disch</span> was a... An introduction to Disch’s work, common themes he explores, number of works published, most popular works. Voyez ce jeu exquis wallon, de graphie en kit mais bref. Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à. Pas qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à.</p>
+
+	    		<div class="disch-quote">
+	    			<div>
+
+	    				<blockquote>“Creativity is the ability to see patterns where none exist.”<br><span>— Thomas M. Disch</span></blockquote>
+
+	    			</div>
+	    		</div>
+
+	    		<p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim. Polyfon zwitschernd aßen Mäxchens Vögel Rüben, Joghurt und Quark. "Fix, Schwyz!" quäkt Jürgen blöd vom Paradß. Find obituaries on Disch in <a href="" class="inline-link">The New York Times</a>, <a href="" class="inline-link">The Guardian</a>, and <a href="" class="inline-link">The New Yorker</a>.</p>
+	    	</section>
+
+	    	<!-- about dish's critically acclaimed novels -->
 	    	<section class="bg-prpl">
 
 	    		<div class="p-alone">
@@ -62,75 +88,84 @@
 		    		<p>An introduction to Disch’s work, common themes he explores, number of works published, most popular works. Voyez ce jeu exquis wallon, de graphie en kit mais bref. Portez ce vieux whisky au juge blond qui fume sur son île intérieure, à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à.</p>
 		    	</div>
 
+		    	<!-- best of disch books -->
 		    	<div class="disch-books">
 		    		<div class="book">
-		    			<img src="imgs/wings-of-song.jpeg" alt="">
+		    			<img src="img/wings-of-song.jpeg" alt="">
 		    			<p>Book title</p>
 		    			<p class="subtitle">date</p>
 		    		</div>
 
 		    		<div class="book">
-		    			<img src="imgs/wings-of-song.jpeg" alt="">
+		    			<img src="img/wings-of-song.jpeg" alt="">
 		    			<p>Book title</p>
 		    			<p class="subtitle">date</p>
 		    		</div>
 
 		    		<div class="book">
-		    			<img src="imgs/wings-of-song.jpeg" alt="">
+		    			<img src="img/wings-of-song.jpeg" alt="">
 		    			<p>Book title</p>
 		    			<p class="subtitle">date</p>
 		    		</div>
 
 		    		<div class="book">
-		    			<img src="imgs/wings-of-song.jpeg" alt="">
+		    			<img src="img/wings-of-song.jpeg" alt="">
 		    			<p>Book title</p>
 		    			<p class="subtitle">date</p>
 		    		</div>
 		    	</div>
 	    	</section>
 
+	    	<!-- how disch came to write amnesia -->
+	    	<!-- GRID AND FLEX -->
 	    	<section>
-	    		<div class="grid">
 
-		    		<div class="p-col1-4">
-		    			<h3>Amnesia</h3>
+	    		<div class="grid flex-column">
+
+	    			<!-- text -->
+		    		<div class="col1-5 grid-txt frst">
+		    			<h3 class="">Amnesia</h3>
 		    			<p>How Disch came to write the original AMNESIA game, and the history of his involvement in the game. Portez où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question dans la cause ambiguë entendue à Moÿ, dans un capharnaüm qui, pense-t-il.</p>
-
 		    		</div>
 
-		    		<div class="img-col5-8">
-		    			<img src="imgs/amnesia-folio-35mm.png" alt="35 milimeter photograph of the original Amnesia folio">
-		    		</div>
-	    		</div>
-
-	    		<div class="grid">
-
-		    		<div class="col1-6">
-		    			<img src="imgs/disch-holding-amnesia.jpeg" alt="Thomas Disch holding Amnesia">
+					<!-- image -->
+		    		<div class="col6-7 scnd grid-img">
+		    			<img src="img/amnesia-folio-35mm.png" alt="35 milimeter photograph of the original Amnesia folio">
 		    		</div>
 
-		    		<div class="col8-5 grid-txt">
+	    			<!-- image -->
+		    		<div class="col1-6 grid-img frth">
+		    			<img src="img/disch-holding-amnesia.jpeg" alt="Thomas Disch holding Amnesia">
+		    		</div>
 
+		    		<!-- text -->
+		    		<div class="col8-5 thrd grid-txt">
 		    			<p>Vous à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre, ce qui lui permet de penser à la cænogenèse de l"être dont il est question. Vous à côté de l"alcôve ovoïde, où les bûches se consument dans l"âtre dans la cause ambiguë entendue à Moÿ, dans un capharnaüm qui, pense-t-il.</p>
 		    		</div>
 		    	</div>
 	    	</section>
 
+	    	<!-- amnesia book coming out -->
+	    	<!-- NEEDS HELP -->
 	    	<section class="bg-prpl">
 
-		    	<div class="grid">
+		    	<div class="grid flex-column">
 
+		    		<!-- text -->
 		    		<div class="col1-6 grid-txt">
 
-		    			<h3>Explore the Original manuscript</h3>
+		    			<h3 class="">Explore the Original manuscript</h3>
 
-			    		<h4 class="amnesia-book">Total Amnesia: The Complete Text and Programming Notes of the World's Most Famous Lost Computer Game</h4>
-			    		<p>Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.</p>
-			    		<p>For more information, contact Sarah Smith at <a href="#" class="inline-link">sarahsmith@gmail.com</a></p>
+			    		<h4 class="amnesia-book ">Total Amnesia: The Complete Text and Programming Notes of the World's Most Famous Lost Computer Game</h4>
+
+			    		<p class="">Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt. Franz jagt im komplett verwahrlosten Taxi quer durch Bayern. Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich. Vogel Quax zwickt Johnys Pferd Bim.</p>
+
+			    		<p class="">For more information, contact Sarah Smith at <a href="#" class="inline-link">sarahsmith@gmail.com</a></p>
 			    	</div>
 
+					<!-- image -->
 			    	<div  class="col8-5">
-			    		<img src="imgs/disch-cross-armed.jpeg" alt="">
+			    		<img src="img/disch-cross-armed.jpeg" alt="">
 			    	</div>
 
 			    </div>
@@ -139,32 +174,42 @@
 
 	    	<!-- special thanks -->
 
-	    	<section class="special-thanks">
+	    	<section class="special-thanks flex-column">
 
-	    		<h3>Special Thanks W.I.P</h3>
+	    		<h3 class="frst">Special Thanks</h3>
 
-	    		<div class="spcl-thnks-lft">
-	    			<img src="imgs/sarahsmith.jpeg" alt="" style="max-height: ;">
-	    			<h5>Sarah</h5>
-	    			<p></p>
+	    		<div class="scnd spcl-thnks-container">
+
+	    			<img src="img/sarah.png" alt="">
+
+	    			<div class="spcl-thnks-txt">
+	    				<h5>Sarah</h5>
+	    				<p>About this person with details about them and why they're important. Are we including social links or an email?</p>
+	    			</div>
+
 	    		</div>
 
-	    		<div class="spcl-thnks-rght">
-	    			<img src="imgs/gregoryfeeley.jpeg" alt="" style="max-height: ;">
-	    			<h5>Gregory</h5>
-	    			<p></p>
+	    		<div class="thrd spcl-thnks-container">
+	    			
+	    			<img src="img/gregory.png" alt="" style="">
+	    			
+	    			<div class="spcl-thnks-txt">
+	    				<h5>Gregory</h5>
+	    				<p>About this person with details about them and why they're important. Are we including social links or an email?</p>
+	    			</div>
+
 	    		</div>
 
 	    	</section>
 
 	    </main>
-
+	    <!--
 	    <footer>
 
-	    	<div class="footer-grid">
+	    	<section class="footer-grid">
 
 		    	<div class="">
-		    		<img src="imgs/footer-logo.png" style="max-width: 310px;" alt="logo for amnesia restored">
+		    		<img src="img/footer-logo.png" style="max-width: 310px;" alt="logo for amnesia restored">
 		    	</div>
 
 		    	<div class="" >
@@ -188,9 +233,9 @@
 		    		<a href="">Restoration</a>
 		    		<a href="">Credits</a>
 		    	</div>
-		    </div>
+		    </section>
 
-	    </footer>
+	    </footer> -->
 
 	</body>
 </html>
