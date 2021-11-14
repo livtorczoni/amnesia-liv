@@ -436,7 +436,7 @@ DESKTOP nav ACTIVATED 768px;
     margin: 0 auto;
     padding: 0 1rem;
     position: fixed;
-    width: 100vw;
+    width: 98vw; /* change by ceenan */
   }
   nav {
     font-size: 14px;
@@ -653,6 +653,24 @@ GRID 12 COLUMN FOR IMAGES AND TEXT
   }
 }
 
+/*****Grid Auto-fit for Mobile*****/ /*CC Note:*/
+@media screen and (max-width: 800px) {
+  .grid-auto-fit {
+      align-items: center; 
+      display: grid;
+      grid-gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      justify-content: center;
+      margin: 0 auto;
+  }
+}
+  /*CC Note: Mobile code to stack images first, then heading, then paragraph! Heading/img/para is also possible if we make them all separate divs*/
+@media screen and (max-width: 570px) { 
+
+    .img-above-text div:nth-child(2) {order: 1; }
+    .img-above-text div:nth-child(1) {order: 2; } 
+}
+    
 /* >800px-1200px screen width */
 @media screen and (min-width: 800px) {
   .grid {
